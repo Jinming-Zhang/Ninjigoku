@@ -6,16 +6,25 @@ using Cinemachine;
 public class PlayerCameraControll : MonoBehaviour
 {
     public static int shakeIntensity;
+    [Header("Shaking Config")]
     [SerializeField]
     private int shakeFrequency;
-
-    CinemachineVirtualCamera vc;
-    CinemachineFramingTransposer frameTransposCam;
-
+    [Header("Movement Config")]
     [SerializeField]
     float xOffsetMax;
     [SerializeField]
     float yOffsetMax;
+    [Header("Zoom Config")]
+    [SerializeField]
+    float zoomPercent;
+    [SerializeField]
+    float zoomSpeed;
+    float targetCamDistance;
+
+    CinemachineVirtualCamera vc;
+    CinemachineFramingTransposer frameTransposCam;
+    CinemachineCameraOffset vcCameraOffset;
+
 
     Coroutine shakeCoroutine;
     float shakeTimer = 0;
@@ -28,26 +37,38 @@ public class PlayerCameraControll : MonoBehaviour
     {
         vc = GetComponent<CinemachineVirtualCamera>();
         frameTransposCam = vc.GetCinemachineComponent(CinemachineCore.Stage.Body) as CinemachineFramingTransposer;
-        if (frameTransposCam)
+        vcCameraOffset = GetComponent<CinemachineCameraOffset>();
+        if (!frameTransposCam || !vcCameraOffset)
         {
-            originalCameraDistance = frameTransposCam.m_CameraDistance;
+            Debug.LogError("PlayerCameraControll: Cannot find FrameTransposer or CameraOffset component!");
         }
+        originalCameraDistance = frameTransposCam.m_CameraDistance;
+        targetCamDistance = originalCameraDistance;
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            frameTransposCam.m_CameraDistance = 0.9f * originalCameraDistance;
-            shouldShake = true;
+            targetCamDistance = (1 - zoomPercent) * originalCameraDistance;
         }
         if (Input.GetMouseButtonUp(0))
         {
-            frameTransposCam.m_CameraDistance = originalCameraDistance;
-            shouldShake = false;
+            targetCamDistance = originalCameraDistance;
         }
-        //SetCameraShake(shouldShake);
+        AdjustCamDistance();
         SetCameraOffset();
+    }
+
+    private void AdjustCamDistance()
+    {
+        float currentCamDist = frameTransposCam.m_CameraDistance;
+        Debug.Log($"Current Cam Dist: {currentCamDist}, Target: {targetCamDistance}");
+        if (Mathf.Abs(currentCamDist - targetCamDistance) > 0.001f)
+        {
+            int sign = targetCamDistance - currentCamDist > 0 ? 1 : -1;
+            frameTransposCam.m_CameraDistance = Mathf.Clamp(currentCamDist + sign * zoomSpeed * Time.deltaTime, zoomPercent * originalCameraDistance, originalCameraDistance);
+        }
     }
 
     private void SetCameraShake(bool shake)
@@ -74,6 +95,15 @@ public class PlayerCameraControll : MonoBehaviour
 
         mouseX = Mathf.Clamp(mouseX, 0, Screen.width);
         mouseY = Mathf.Clamp(mouseY, 0, Screen.height);
+
+        float screenMidX = Screen.width / 2.0f;
+        float screenMidY = Screen.height / 2.0f;
+
+
+        float offsetX = (mouseX - screenMidX) / screenMidX;
+        float offsetY = (mouseY - screenMidY) / screenMidY;
+        vcCameraOffset.m_Offset.x = offsetX * xOffsetMax;
+        vcCameraOffset.m_Offset.y = offsetY * yOffsetMax;
 
     }
 
