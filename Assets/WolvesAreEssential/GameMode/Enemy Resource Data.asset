@@ -17,17 +17,14 @@ MonoBehaviour:
     enemyType: type 1
     amount: 10
     randomized: 0
-    coordinate: {x: 0, y: 0, z: 0}
-    spawned: 0
+    coordinate: {x: 5, y: 0, z: 6}
   - timeElapsed: 5
     enemyType: type 2
     amount: 5
     randomized: 1
     coordinate: {x: 0, y: 0, z: 0}
-    spawned: 0
   - timeElapsed: 10
     enemyType: type 3
     amount: 2
     randomized: 1
     coordinate: {x: 0, y: 0, z: 0}
-    spawned: 0
