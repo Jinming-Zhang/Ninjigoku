@@ -8,7 +8,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float angleOffset;
     [SerializeField]
-    float speed;
+    float speedMove;
+    [SerializeField]
+    float speedRotate;
     // private bool facingRight = false;
     // private bool facingLeft = false;
     // private bool facingDown = false;
@@ -33,24 +35,24 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        Debug.LogFormat("x: {0}, z: {1}", rb.position.x, rb.position.z);
+        // Debug.LogFormat("x: {0}, z: {1}", rb.position.x, rb.position.z);
         Vector3 pos = transform.position;
 
         if (Input.GetKey(KeyCode.W))
         {
-            pos.x = pos.x + speed * Time.fixedDeltaTime;
+            pos.x = pos.x + speedMove * Time.fixedDeltaTime;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            pos.x = pos.x - speed * Time.fixedDeltaTime;
+            pos.x = pos.x - speedMove * Time.fixedDeltaTime;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            pos.z = pos.z + speed * Time.fixedDeltaTime;
+            pos.z = pos.z + speedMove * Time.fixedDeltaTime;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            pos.z = pos.z - speed * Time.fixedDeltaTime;
+            pos.z = pos.z - speedMove * Time.fixedDeltaTime;
         }
 
         rb.MovePosition(pos);
@@ -67,6 +69,27 @@ public class PlayerMovement : MonoBehaviour
         // Find Angle
         float angle = Mathf.Atan2(positionOnScreen.x - mouseOnScreen.x, 
             positionOnScreen.y - mouseOnScreen.y) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0f, angle + angleOffset, 0f));
+
+        Quaternion idealRotation = Quaternion.Euler(new Vector3(0f, angle + angleOffset, 0f));
+        Quaternion currentRotation = transform.rotation;
+        float rotationDiff = idealRotation.eulerAngles.y - currentRotation.eulerAngles.y;
+        float yRotation = currentRotation.eulerAngles.y;
+
+        // Stop Rotation When Close Enough
+        if (Mathf.Abs(rotationDiff) > 3f)
+        {
+            // Rotate Left
+            if (rotationDiff > 180f || (rotationDiff < 0 && rotationDiff > -180f))
+            {
+                yRotation -= speedRotate * Time.fixedDeltaTime;
+            }
+            // Rotate Right
+            else if (rotationDiff <= 180f || rotationDiff <= -180f)
+            {
+                yRotation += speedRotate * Time.fixedDeltaTime;
+            }
+        }
+
+        transform.rotation = Quaternion.Euler(new Vector3(0f, yRotation, 0f));
     }
 }
