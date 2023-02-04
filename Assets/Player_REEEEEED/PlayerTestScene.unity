@@ -557,7 +557,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angleOffset: 125
-  speed: 1.5
+  speedMove: 1.5
+  speedRotate: 50
   rb: {fileID: 499220798}
 --- !u!1 &503697030
 GameObject:
