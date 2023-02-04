@@ -5,6 +5,7 @@ using UnityEngine;
 public class Root : MonoBehaviour
 {
     int health;
+    bool dead=false;
     void SetHealth(int h)
     {
         health = h;
@@ -12,6 +13,7 @@ public class Root : MonoBehaviour
     void TakeDamage(int val)
     {
         health -= val;
+        if (health <= 0) dead = true;
     }
     // Start is called before the first frame update
     void Start()
