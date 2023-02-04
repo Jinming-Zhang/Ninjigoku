@@ -1,9 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
+public class EnemyPrefabMap
+{
+    public EnemyType enemyType;
+    public GameObject enemyPrefab;
+}
+
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField]
+    List<EnemyPrefabMap> enemyTypeMap;
+
     [SerializeField]
     EnemyResourceData enemyResourceData;
     [SerializeField]
@@ -37,7 +48,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy(EnemyResourceData.EnemySpawnTimeline spawnData)
     {
-        string enemyType = spawnData.enemyType;
+        var enemyType = spawnData.enemyType;
         if (spawnData.randomized)
         {
             for (int i = 0; i < spawnData.amount; i++)
@@ -55,7 +66,7 @@ public class EnemySpawner : MonoBehaviour
 
     private Vector3 GetRandomSpawnPosition()
     {
-        Vector2 spawn2D = Random.insideUnitCircle * radius;
+        Vector2 spawn2D = UnityEngine.Random.insideUnitCircle * radius;
         return new Vector3(spawn2D.x, 0.5f, spawn2D.y);
     }
 

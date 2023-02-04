@@ -11,7 +11,7 @@ public class EnemyResourceData : ScriptableObject
     public class EnemySpawnTimeline
     {
         public float timeElapsed;
-        public string enemyType;
+        public EnemyType enemyType;
         public int amount;
         public bool randomized;
         public Vector3 coordinate;
