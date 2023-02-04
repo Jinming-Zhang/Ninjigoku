@@ -6,22 +6,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    float angleOffset;
-    [SerializeField]
     float speedMove;
     [SerializeField]
-    float speedRotate;
-    // private bool facingRight = false;
-    // private bool facingLeft = false;
-    // private bool facingDown = false;
-    // private bool facingUp = true;
+    float degPerSec;
 
     [SerializeField] private Rigidbody rb;
 
     private void Start()
     {
-        //horizontal = 5.0f;
-        //vertical = 5.0f;
     }
 
     private void FixedUpdate()
@@ -31,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Player Rotate
         Rotate();
+        //Rotate2();
     }
 
     void Move()
@@ -60,36 +53,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Rotate()
     {
-        // Object Screen Position
-        Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
+        Vector2 mousePos = Input.mousePosition;
+        Vector3 mousePosWorld = Vector3.one;
+        mousePosWorld.x = mousePos.x;
+        mousePosWorld.y = mousePos.y;
+        mousePosWorld.z = Vector3.Distance(transform.position, Camera.main.transform.position);
+        mousePosWorld = Camera.main.ScreenToWorldPoint(mousePosWorld);
+        mousePosWorld.y = transform.position.y;
 
-        // Mouse Screen Position
-        Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        Vector3 targetDir = mousePosWorld - transform.position;
+        Vector3 current = transform.forward;
+        Vector3 next = Vector3.RotateTowards(current, targetDir, degPerSec * Mathf.Deg2Rad * Time.fixedDeltaTime, 0);
+        transform.forward = next;
 
-        // Find Angle
-        float angle = Mathf.Atan2(positionOnScreen.x - mouseOnScreen.x, 
-            positionOnScreen.y - mouseOnScreen.y) * Mathf.Rad2Deg;
-
-        Quaternion idealRotation = Quaternion.Euler(new Vector3(0f, angle + angleOffset, 0f));
-        Quaternion currentRotation = transform.rotation;
-        float rotationDiff = idealRotation.eulerAngles.y - currentRotation.eulerAngles.y;
-        float yRotation = currentRotation.eulerAngles.y;
-
-        // Stop Rotation When Close Enough
-        if (Mathf.Abs(rotationDiff) > 3f)
-        {
-            // Rotate Left
-            if (rotationDiff > 180f || (rotationDiff < 0 && rotationDiff > -180f))
-            {
-                yRotation -= speedRotate * Time.fixedDeltaTime;
-            }
-            // Rotate Right
-            else if (rotationDiff <= 180f || rotationDiff <= -180f)
-            {
-                yRotation += speedRotate * Time.fixedDeltaTime;
-            }
-        }
-
-        transform.rotation = Quaternion.Euler(new Vector3(0f, yRotation, 0f));
     }
 }
