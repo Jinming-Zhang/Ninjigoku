@@ -67,6 +67,11 @@ public class AudioSystem : MonoBehaviour
 
         transitionCoroutine = StartCoroutine(transitionCR(current, next, clip, volumn, duration));
     }
+    public void PlaySFX(AudioClip clip, float volumn = 1f)
+    {
+        AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position);
+    }
+
     IEnumerator transitionCR(AudioSource current, AudioSource next, AudioClip clip, float volumn, float duration)
     {
         float track1Amt = current.volume;
