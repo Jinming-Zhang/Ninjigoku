@@ -9,6 +9,10 @@ public class Bullet : MonoBehaviour
     public GameObject bulletMesh;
     public float speed = 5f;
 
+    [SerializeField]
+    Vector3 movement;
+    [SerializeField]
+    Vector3 forward;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +26,10 @@ public class Bullet : MonoBehaviour
     }
 
     private void Movement() {
-        Vector3 movement = transform.forward;
-        this.transform.Translate(movement * speed * Time.deltaTime);
+        movement = transform.forward;
+
+        this.transform.Translate(movement * speed * Time.deltaTime, Space.World);
+        //transform.position = transform.position + movement * speed * Time.deltaTime;
     }
 
     private void OnCollisionEnter(Collision collision)
