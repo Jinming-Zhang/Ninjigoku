@@ -15,7 +15,6 @@ public class EnemyResourceData : ScriptableObject
         public int amount;
         public bool randomized;
         public Vector3 coordinate;
-        public bool spawned;
     }
     public List<EnemySpawnTimeline> enemySpawnData;
 }

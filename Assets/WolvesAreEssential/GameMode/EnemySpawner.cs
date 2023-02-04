@@ -6,6 +6,11 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
     EnemyResourceData enemyResourceData;
+    [SerializeField]
+    GameObject enemyTemplate;
+    [SerializeField]
+    int radius;
+
     private float timer = 0;
     int spawningIndex;
     bool started = false;
@@ -28,19 +33,35 @@ public class EnemySpawner : MonoBehaviour
                 ++spawningIndex;
             }
         }
-
     }
+
     private void SpawnEnemy(EnemyResourceData.EnemySpawnTimeline spawnData)
     {
         string enemyType = spawnData.enemyType;
         if (spawnData.randomized)
         {
-            Debug.Log($"Spawning {spawnData.amount} randomized enemy of type {spawnData.enemyType}");
+            for (int i = 0; i < spawnData.amount; i++)
+            {
+                GameObject enemy = Instantiate(enemyTemplate);
+                enemy.transform.position = GetRandomSpawnPosition();
+            }
         }
         else
         {
-            Debug.Log($"Spawning 1 randomized enemy of type {spawnData.enemyType} at position {spawnData.coordinate}");
+            GameObject enemy = Instantiate(enemyTemplate);
+            enemy.transform.position = spawnData.coordinate;
         }
     }
 
+    private Vector3 GetRandomSpawnPosition()
+    {
+        Vector2 spawn2D = Random.insideUnitCircle * radius;
+        return new Vector3(spawn2D.x, 0.5f, spawn2D.y);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, radius);
+    }
 }
