@@ -5,8 +5,18 @@ using Cinemachine;
 [RequireComponent(typeof(CinemachineVirtualCamera))]
 public class PlayerCameraControll : MonoBehaviour
 {
+    public static int shakeIntensity;
+    [SerializeField]
+    private int shakeFrequency;
+
     CinemachineVirtualCamera vc;
     CinemachineFramingTransposer frameTransposCam;
+
+    [SerializeField]
+    float xOffsetMax;
+    [SerializeField]
+    float yOffsetMax;
+
     Coroutine shakeCoroutine;
     float shakeTimer = 0;
 
@@ -36,16 +46,17 @@ public class PlayerCameraControll : MonoBehaviour
             frameTransposCam.m_CameraDistance = originalCameraDistance;
             shouldShake = false;
         }
-        SetCameraShake(shouldShake);
+        //SetCameraShake(shouldShake);
+        SetCameraOffset();
     }
 
-    private void SetCameraShake(bool shake, float intensity = 0.3f, float frequency = 200f)
+    private void SetCameraShake(bool shake)
     {
         CinemachineBasicMultiChannelPerlin perlin = vc.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         if (shake)
         {
-            perlin.m_AmplitudeGain = intensity;
-            perlin.m_FrequencyGain = frequency;
+            perlin.m_AmplitudeGain = shakeIntensity;
+            perlin.m_FrequencyGain = shakeFrequency;
         }
         else
         {
@@ -53,9 +64,16 @@ public class PlayerCameraControll : MonoBehaviour
             perlin.m_FrequencyGain = 0;
         }
     }
+
     // x, z offset based on mouse pos
     private void SetCameraOffset()
     {
+        Vector3 mousePos = Input.mousePosition;
+        float mouseX = mousePos.x;
+        float mouseY = mousePos.y;
+
+        mouseX = Mathf.Clamp(mouseX, 0, Screen.width);
+        mouseY = Mathf.Clamp(mouseY, 0, Screen.height);
 
     }
 
