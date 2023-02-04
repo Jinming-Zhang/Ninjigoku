@@ -10,6 +10,8 @@ public class Test : MonoBehaviour
     AudioClip clip2;
     AudioClip current;
 
+    [SerializeField]
+    PlayerCameraControll cameraControll;
     private void Start()
     {
         current = clip1;
@@ -27,5 +29,10 @@ public class Test : MonoBehaviour
             AudioSystem.Instance.TransitionToBGM(clip1, 2f);
             current = clip1;
         }
+    }
+    [ContextMenu("Test Shake")]
+    public void Shake()
+    {
+        cameraControll.ShakeCamera(1f);
     }
 }

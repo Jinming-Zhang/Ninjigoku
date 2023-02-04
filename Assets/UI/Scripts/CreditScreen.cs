@@ -4,8 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class CreditScreen : MonoBehaviour
+public class CreditScreen : UIScreen<CreditScreen>
 {
+    private static CreditScreen instance;
+    //public static CreditScreen Instance =>{
+    //    get{
     [SerializeField]
     [Range(0f, 1f)]
     float scrollIndex;

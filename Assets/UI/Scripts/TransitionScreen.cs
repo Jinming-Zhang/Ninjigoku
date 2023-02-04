@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 [RequireComponent(typeof(CanvasGroup))]
-public class TransitionScreen : MonoBehaviour
+public class TransitionScreen : UIScreen<TransitionScreen>
 {
     public struct TransitionConfig
     {
@@ -25,12 +25,12 @@ public class TransitionScreen : MonoBehaviour
     [SerializeField]
     AnimationCurve curve;
 
-    CanvasGroup cg;
+    //CanvasGroup cg;
 
     TransitionConfig config;
     private void Awake()
     {
-        cg = GetComponent<CanvasGroup>();
+        //cg = GetComponent<CanvasGroup>();
     }
     // Start is called before the first frame update
 
