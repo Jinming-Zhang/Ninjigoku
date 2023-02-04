@@ -10,16 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9ab085c6e294464ba302110b0300854, type: 3}
-  m_Name: New Enemy Resource Data
+  m_Name: Enemy Resource Data
   m_EditorClassIdentifier: 
   enemySpawnData:
   - timeElapsed: 0
-    enemyType: 
-    amount: 0
+    enemyType: type 1
+    amount: 10
     randomized: 0
     coordinate: {x: 0, y: 0, z: 0}
-  - timeElapsed: 0
-    enemyType: 
-    amount: 0
-    randomized: 0
+    spawned: 0
+  - timeElapsed: 5
+    enemyType: type 2
+    amount: 5
+    randomized: 1
     coordinate: {x: 0, y: 0, z: 0}
+    spawned: 0
+  - timeElapsed: 10
+    enemyType: type 3
+    amount: 2
+    randomized: 1
+    coordinate: {x: 0, y: 0, z: 0}
+    spawned: 0
