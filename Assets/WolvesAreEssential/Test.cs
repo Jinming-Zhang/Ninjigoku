@@ -35,4 +35,10 @@ public class Test : MonoBehaviour
     {
         cameraControll.ShakeCamera(1f);
     }
+
+    [ContextMenu("Show Intro Canvas")]
+    public void ShowIntroCanvas()
+    {
+        IntroCanvas.Instance.Show();
+    }
 }

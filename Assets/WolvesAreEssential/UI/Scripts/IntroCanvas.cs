@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class IntroCanvas : UIScreen<IntroCanvas>
 {
-    // Start is called before the first frame update
-    void Start()
+    private static IntroCanvas instance;
+    public static IntroCanvas Instance
     {
-
+        get
+        {
+            if (!instance)
+            {
+                Object go = Instantiate(Resources.Load("IntroCanvas"));
+                instance = go.GetComponent<IntroCanvas>();
+                instance.gameObject.SetActive(false);
+            }
+            return instance;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-
+        instance = null;
     }
+
+
 }
