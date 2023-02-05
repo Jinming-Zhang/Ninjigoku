@@ -41,4 +41,9 @@ public class Test : MonoBehaviour
     {
         IntroCanvas.Instance.Show();
     }
+    [ContextMenu("Hide Intro Canvas")]
+    public void HideIntroCanvas()
+    {
+        IntroCanvas.Instance.Shutdown();
+    }
 }
