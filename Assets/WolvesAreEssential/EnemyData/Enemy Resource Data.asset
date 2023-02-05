@@ -17,62 +17,62 @@ MonoBehaviour:
     enemyType: 0
     amount: 1
     randomized: 0
-    coordinate: {x: 2.5, y: 0, z: 2.5}
+    coordinate: {x: -150, y: 0, z: 150}
   - timeElapsed: 5
     enemyType: 0
     amount: 1
     randomized: 0
-    coordinate: {x: -2.5, y: 0, z: 2.5}
+    coordinate: {x: 150, y: 0, z: 150}
   - timeElapsed: 5
     enemyType: 0
     amount: 1
     randomized: 0
-    coordinate: {x: -2.5, y: 0, z: -2.5}
+    coordinate: {x: -150, y: 0, z: -150}
   - timeElapsed: 5
     enemyType: 0
     amount: 1
     randomized: 0
-    coordinate: {x: 2.5, y: 0, z: -2.5}
+    coordinate: {x: 150, y: 0, z: -150}
   - timeElapsed: 15
     enemyType: 0
     amount: 1
     randomized: 0
-    coordinate: {x: 2.5, y: 0, z: -2.5}
+    coordinate: {x: 100, y: 0, z: 150}
   - timeElapsed: 15
     enemyType: 0
     amount: 1
     randomized: 0
-    coordinate: {x: 2.5, y: 0, z: -2.5}
+    coordinate: {x: 150, y: 0, z: 100}
   - timeElapsed: 15
     enemyType: 0
     amount: 1
     randomized: 0
-    coordinate: {x: 2.5, y: 0, z: -2.5}
+    coordinate: {x: -150, y: 0, z: -100}
   - timeElapsed: 15
     enemyType: 0
     amount: 1
     randomized: 0
-    coordinate: {x: 2.5, y: 0, z: -2.5}
+    coordinate: {x: -100, y: 0, z: -150}
   - timeElapsed: 15
     enemyType: 0
     amount: 1
     randomized: 0
-    coordinate: {x: 2.5, y: 0, z: -2.5}
+    coordinate: {x: -200, y: 0, z: 200}
   - timeElapsed: 15
     enemyType: 0
     amount: 1
     randomized: 0
-    coordinate: {x: 2.5, y: 0, z: -2.5}
+    coordinate: {x: 200, y: 0, z: 200}
   - timeElapsed: 15
     enemyType: 0
     amount: 1
     randomized: 0
-    coordinate: {x: 2.5, y: 0, z: -2.5}
+    coordinate: {x: -200, y: 0, z: -200}
   - timeElapsed: 15
     enemyType: 0
     amount: 1
     randomized: 0
-    coordinate: {x: 2.5, y: 0, z: -2.5}
+    coordinate: {x: 200, y: 0, z: -200}
   - timeElapsed: 25
     enemyType: 0
     amount: 4
