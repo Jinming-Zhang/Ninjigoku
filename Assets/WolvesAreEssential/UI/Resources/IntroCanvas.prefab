@@ -570,6 +570,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8060850374627965675, guid: 6eff3bf993d8a1c429019dcf7a540db0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060850374627965675, guid: 6eff3bf993d8a1c429019dcf7a540db0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060850374627965675, guid: 6eff3bf993d8a1c429019dcf7a540db0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: -6982838624749204570}
+    - target: {fileID: 8060850374627965675, guid: 6eff3bf993d8a1c429019dcf7a540db0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060850374627965675, guid: 6eff3bf993d8a1c429019dcf7a540db0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: StartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060850374627965675, guid: 6eff3bf993d8a1c429019dcf7a540db0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: IntroCanvas, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060850374627965675, guid: 6eff3bf993d8a1c429019dcf7a540db0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8503007504513520562, guid: 6eff3bf993d8a1c429019dcf7a540db0,
         type: 3}
       propertyPath: m_ChildControlWidth
@@ -794,6 +829,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060850374627965675, guid: 6eff3bf993d8a1c429019dcf7a540db0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060850374627965675, guid: 6eff3bf993d8a1c429019dcf7a540db0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060850374627965675, guid: 6eff3bf993d8a1c429019dcf7a540db0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: -6982838624749204570}
+    - target: {fileID: 8060850374627965675, guid: 6eff3bf993d8a1c429019dcf7a540db0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060850374627965675, guid: 6eff3bf993d8a1c429019dcf7a540db0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060850374627965675, guid: 6eff3bf993d8a1c429019dcf7a540db0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: IntroCanvas, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060850374627965675, guid: 6eff3bf993d8a1c429019dcf7a540db0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8503007504513520562, guid: 6eff3bf993d8a1c429019dcf7a540db0,
         type: 3}

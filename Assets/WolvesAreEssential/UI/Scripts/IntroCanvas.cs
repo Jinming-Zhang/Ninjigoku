@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IntroCanvas : UIScreen<IntroCanvas>
 {
@@ -34,5 +35,13 @@ public class IntroCanvas : UIScreen<IntroCanvas>
         instance = null;
     }
 
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+    public void Quit()
+    {
+        Application.Quit();
+    }
 
 }
