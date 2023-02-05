@@ -11,6 +11,8 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField]
     Transform weaponPosition;
 
+    private int playerAtk { get; set; }
+
     [SerializeField]
     List<AudioClip> shootingSFXs;
 
@@ -18,7 +20,7 @@ public class PlayerShooting : MonoBehaviour
 
     void Start()
     {
-        
+        playerAtk = 5;
     }
     private void Update()
     {
@@ -72,6 +74,11 @@ public class PlayerShooting : MonoBehaviour
         }
     }
 
+    public void IncrementAtk()
+    {
+        playerAtk += 5;
+    }
+
     void RightClick()
     {
         // Placeholder
@@ -81,4 +88,5 @@ public class PlayerShooting : MonoBehaviour
     {
         // Placeholder
     }
+
 }
