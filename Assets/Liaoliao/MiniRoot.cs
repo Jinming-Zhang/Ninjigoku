@@ -12,6 +12,7 @@ public class MiniRoot : MonoBehaviour
     public EnemyType _TYPE = EnemyType.MiniRoot;
     public int miniRootHP = 5;
 
+    [SerializeField]
     private Vector3 destination = Vector3.zero;
     private float timerForSpawn;
     private int spawnMultiplier = 1;
@@ -53,9 +54,10 @@ public class MiniRoot : MonoBehaviour
     }
 
     private void Movement(Vector3 target) {
-        Vector3 movement = target - this.transform.position;
-        movement.y = 0;
-        this.transform.Translate(movement * speed * Time.deltaTime);
+        transform.LookAt(destination);
+        Vector3 me = transform.position;
+        me.y = 0;
+        transform.position = Vector3.MoveTowards(me, destination, speed * Time.deltaTime);
     }
 
     private void handleSpawn() {
