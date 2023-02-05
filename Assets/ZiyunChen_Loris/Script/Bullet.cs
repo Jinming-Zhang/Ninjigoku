@@ -18,10 +18,11 @@ public class Bullet : MonoBehaviour
     float bulletLifeSpan;
     float bulletAge;
 
+    public float dmg = 1f;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     void updateBulletAge()
@@ -40,18 +41,37 @@ public class Bullet : MonoBehaviour
         updateBulletAge();
     }
 
-    private void Movement() {
+    private void Movement()
+    {
         movement = transform.forward;
-
-        this.transform.Translate(movement * speed * Time.deltaTime, Space.World);
-        //transform.position = transform.position + movement * speed * Time.deltaTime;
+        transform.Translate(movement * speed * Time.deltaTime, Space.World);
     }
 
     private void OnCollisionEnter(Collision collision)
     {//call collision game object damage enemy
-        if (collision.gameObject.tag == "Enemy") {
+        if (collision.gameObject.tag == "Enemy")
+        {
             Destroy(collision.gameObject);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.GetComponent<Boss>())
+        {
+            collision.gameObject.GetComponent<Boss>().TakeDamage(dmg);
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
+        else if (other.gameObject.GetComponent<Boss>())
+        {
+            other.gameObject.GetComponent<Boss>().TakeDamage(dmg);
+            Destroy(gameObject);
         }
     }
 }
