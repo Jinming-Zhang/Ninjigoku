@@ -63,7 +63,7 @@ public class PlayerCameraControll : MonoBehaviour
     private void AdjustCamDistance()
     {
         float currentCamDist = frameTransposCam.m_CameraDistance;
-        Debug.Log($"Current Cam Dist: {currentCamDist}, Target: {targetCamDistance}");
+       //Debug.Log($"Current Cam Dist: {currentCamDist}, Target: {targetCamDistance}");
         if (Mathf.Abs(currentCamDist - targetCamDistance) > 0.001f)
         {
             int sign = targetCamDistance - currentCamDist > 0 ? 1 : -1;
