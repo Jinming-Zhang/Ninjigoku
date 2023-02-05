@@ -37,7 +37,7 @@ public class MiniRoot : MonoBehaviour
         hit = 0;
 
         // spawn 5 mobs at the beginning
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 4; i++) {
             if (lootCheck()) {
                 spawnB();
             } else {
@@ -64,7 +64,7 @@ public class MiniRoot : MonoBehaviour
         timerForSpawn -= Time.deltaTime;
 
         if (timerForSpawn < 0) {
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 8; i++) {
                 if (lootCheck()) {
                     spawnB();
                 } else {
