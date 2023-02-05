@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinCanvas : UIScreen<WinCanvas>
 {
@@ -25,10 +26,14 @@ public class WinCanvas : UIScreen<WinCanvas>
     }
     public void PlayAgain()
     {
-
+        SceneManager.LoadScene(1);
+    }
+    public void Continue()
+    {
+        SceneManager.LoadScene(2);
     }
     public void Quit()
     {
-
+        Application.Quit();
     }
 }
