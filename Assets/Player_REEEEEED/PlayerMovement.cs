@@ -36,19 +36,22 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            pos.x = pos.x + speedMove * Time.fixedDeltaTime;
+            transform.position += transform.forward * speedMove * Time.fixedDeltaTime;
+            //pos.x = pos.f + speedMove * Time.fixedDeltaTime;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            pos.x = pos.x - speedMove * Time.fixedDeltaTime;
+            //pos.x = pos.x - speedMove * Time.fixedDeltaTime;
+            transform.position -= transform.forward * speedMove * Time.fixedDeltaTime;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            pos.z = pos.z + speedMove * Time.fixedDeltaTime;
+            //pos.z = pos.z + speedMove * Time.fixedDeltaTime;
+            transform.position -= transform.right * speedMove * Time.fixedDeltaTime;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            pos.z = pos.z - speedMove * Time.fixedDeltaTime;
+            transform.position += transform.right * speedMove * Time.fixedDeltaTime;
         }
 
         rb.MovePosition(pos);
