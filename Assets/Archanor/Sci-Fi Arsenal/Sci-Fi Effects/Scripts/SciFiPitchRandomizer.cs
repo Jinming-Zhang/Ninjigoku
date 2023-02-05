@@ -11,7 +11,7 @@ namespace SciFiArsenal
 	
 		void Start ()
 		{
-        transform.GetComponent<AudioSource>().pitch *= 1 + Random.Range(-randomPercent / 100, randomPercent / 100);
+		 //transform.GetComponent<AudioSource>().pitch *= 1 + Random.Range(-randomPercent / 100, randomPercent / 100);
 		}
 	}
 }
