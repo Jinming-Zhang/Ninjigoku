@@ -122,6 +122,7 @@ MonoBehaviour:
   _TYPE: 0
   miniRootHP: 10
   destination: {x: 0, y: 0, z: 0}
+  s: {fileID: 4417779321113523956, guid: aac4b7100cf88bc4d9ae33f87eda371c, type: 3}
 --- !u!54 &-5383048204015802005
 Rigidbody:
   m_ObjectHideFlags: 0

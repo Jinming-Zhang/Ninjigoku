@@ -14,6 +14,8 @@ public class MiniRoot : MonoBehaviour
 
     [SerializeField]
     private Vector3 destination = Vector3.zero;
+    [SerializeField]
+    private Star s;
     private float timerForSpawn;
     private int spawnMultiplier = 1;
     private Vector3[] spawnLocations = {
@@ -103,7 +105,16 @@ public class MiniRoot : MonoBehaviour
         {
             Debug.Log("hit!");
             hit++;
-            if (hit >= miniRootHP) Destroy(gameObject);
+            if (hit >= miniRootHP)
+            {
+                Destroy(gameObject);
+                for (int i = 0; i < 5; i++)
+                {
+                    Vector3 loc = getSpawnLocation();
+                    loc.y = 0;
+                    Instantiate(s, loc, Quaternion.identity);
+                }
+            }
         }
     }
 
