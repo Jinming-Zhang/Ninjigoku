@@ -30,7 +30,7 @@ public abstract class UIScreen<T> : MonoBehaviour where T : MonoBehaviour
 
     public virtual void Shutdown()
     {
-
+        Destroy(gameObject);
     }
 
 
