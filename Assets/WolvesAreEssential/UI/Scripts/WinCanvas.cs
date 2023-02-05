@@ -23,4 +23,12 @@ public class WinCanvas : UIScreen<WinCanvas>
     {
         instance = null;
     }
+    public void PlayAgain()
+    {
+
+    }
+    public void Quit()
+    {
+
+    }
 }
