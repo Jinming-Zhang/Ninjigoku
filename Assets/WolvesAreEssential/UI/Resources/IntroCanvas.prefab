@@ -219,10 +219,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nijiji
+  m_text: GITGITHELL
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1f35fbe742f3e4143aea6700fc5a25b7, type: 2}
+  m_sharedMaterial: {fileID: -7736998178676313947, guid: 1f35fbe742f3e4143aea6700fc5a25b7,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -420,6 +421,12 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 72
       objectReference: {fileID: 0}
+    - target: {fileID: 1091296242341685475, guid: 6eff3bf993d8a1c429019dcf7a540db0,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7736998178676313947, guid: 1f35fbe742f3e4143aea6700fc5a25b7,
+        type: 2}
     - target: {fileID: 1091296242341685475, guid: 6eff3bf993d8a1c429019dcf7a540db0,
         type: 3}
       propertyPath: m_enableAutoSizing
@@ -680,6 +687,12 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 72
       objectReference: {fileID: 0}
+    - target: {fileID: 1091296242341685475, guid: 6eff3bf993d8a1c429019dcf7a540db0,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7736998178676313947, guid: 1f35fbe742f3e4143aea6700fc5a25b7,
+        type: 2}
     - target: {fileID: 1091296242341685475, guid: 6eff3bf993d8a1c429019dcf7a540db0,
         type: 3}
       propertyPath: m_enableAutoSizing
