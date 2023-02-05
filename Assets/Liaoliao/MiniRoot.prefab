@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  spawnTime: 15
+  spawnTime: 10
   mobA: {fileID: 4578464022573303405, guid: b3bd2f3041ec67f47a3a090a0670c876, type: 3}
   mobB: {fileID: 4578464022573303405, guid: c891e88a4b2e24d2dbb386863bdfa7b2, type: 3}
   lootProbability: 10

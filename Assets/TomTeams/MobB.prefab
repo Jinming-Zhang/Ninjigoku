@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   s: {fileID: 4509280694190962873, guid: aac4b7100cf88bc4d9ae33f87eda371c, type: 3}
   mobHealth: 1
-  chasingSpeed: 5.49
+  chasingSpeed: 3
   player: {fileID: 0}
   MobDestroy: {fileID: 0}
   DropPowerUp: {fileID: 0}
