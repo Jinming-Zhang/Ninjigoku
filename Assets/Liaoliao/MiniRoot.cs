@@ -56,7 +56,7 @@ public class MiniRoot : MonoBehaviour
     private void Movement(Vector3 target) {
         transform.LookAt(destination);
         Vector3 me = transform.position;
-        me.y = 0;
+        me.y = 6;
         transform.position = Vector3.MoveTowards(me, destination, speed * Time.deltaTime);
     }
 
