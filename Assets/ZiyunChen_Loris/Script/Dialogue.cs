@@ -16,7 +16,8 @@ public class Dialogue : MonoBehaviour
     public int index;
     public int indexForPan;
     public bool canClick;
-
+    IntroSequenceTimelineControl it;
+    EnemySpawner enemySpawner;
     PlayableDirector director;
     PlayerCollision player;
     void StartDialogue()
@@ -32,7 +33,7 @@ public class Dialogue : MonoBehaviour
             yield return new WaitForSeconds(textSpeed);
         }
       if (index == indexForPan) {
-            //postProcess.SetActive(false);
+            
             Notify();
         }
     }
@@ -52,17 +53,22 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            player.isDead = false;
-            canClick = true;
-  
-           
-            gameObject.SetActive(false);
+            if (index == lines.Length - 1)
+            {
+                player.isDead = false;
+                canClick = true;
+                if (!it.cutsceneisEnded) director.Stop();
+                enemySpawner.StartTimer();
+                gameObject.SetActive(false);
+            }
         }
     }
     
     // Start is called before the first frame update
     void Start()
     {
+        it = FindObjectOfType<IntroSequenceTimelineControl>();
+        enemySpawner = FindObjectOfType<EnemySpawner>();
         textComponent.text = string.Empty;
         director = FindObjectOfType<PlayableDirector>();
         player = FindObjectOfType<PlayerCollision>();
@@ -86,10 +92,14 @@ public class Dialogue : MonoBehaviour
                 if(index == indexForPan) Notify();
             }
         }
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape) && !it.cutsceneisEnded)
         {
-
-            Destroy(this.gameObject);
+            player.isDead = false;
+            canClick = true;
+            if (!it.cutsceneisEnded) director.Stop();
+            enemySpawner.StartTimer();
+            gameObject.SetActive(false);
+           
         }
     }
 

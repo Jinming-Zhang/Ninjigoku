@@ -15,7 +15,8 @@ public class IntroSequenceTimelineControl : MonoBehaviour
     PlayableDirector director;
     PlayerCollision player;
     Dialogue dialogue;
-    bool isEnded = false;
+    public bool cutsceneisEnded = false;
+    public GameObject Slider;
     [SerializeField] CinemachineVirtualCamera virtualCamera;
     // Start is called before the first frame update
     private void Awake()
@@ -27,18 +28,20 @@ public class IntroSequenceTimelineControl : MonoBehaviour
     }
     void Start()
     {
+        Slider.SetActive(false);
         //StartCoroutine(StartCutScence());
         dialogue = FindObjectOfType<Dialogue>();
         player = FindObjectOfType<PlayerCollision>();
     }
     private void Update()
     {
-        if (!isEnded && Input.GetKeyUp(KeyCode.Escape)) {
+        if (!cutsceneisEnded && Input.GetKeyUp(KeyCode.Escape)) {
             player.isDead = false;
             director.Stop();
             virtualCamera.Priority = 10;
             StartCoroutine(ChangeCameraSettings());
-            isEnded = true;
+            Slider.SetActive(true);
+            cutsceneisEnded = true;
         }
     }
     void DisablePlayerControl(PlayableDirector p)
@@ -49,7 +52,7 @@ public class IntroSequenceTimelineControl : MonoBehaviour
         player.isDead = true;
         StartCoroutine(ChangeCameraSettings());
         dialogue.canClick = false;
-        isEnded = true;
+        cutsceneisEnded = false;
 
     }
     void EnablePlayerControl(PlayableDirector p) {
