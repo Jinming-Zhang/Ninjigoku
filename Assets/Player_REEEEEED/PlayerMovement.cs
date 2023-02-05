@@ -38,20 +38,28 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position += transform.forward * speedMove * Time.fixedDeltaTime;
             //pos.x = pos.f + speedMove * Time.fixedDeltaTime;
+
+            GetComponent<PlayAudio>().playFootStepsAudio();
         }
         if (Input.GetKey(KeyCode.S))
         {
             //pos.x = pos.x - speedMove * Time.fixedDeltaTime;
             transform.position -= transform.forward * speedMove * Time.fixedDeltaTime;
+
+            GetComponent<PlayAudio>().playFootStepsAudio();
         }
         if (Input.GetKey(KeyCode.A))
         {
             //pos.z = pos.z + speedMove * Time.fixedDeltaTime;
             transform.position -= transform.right * speedMove * Time.fixedDeltaTime;
+
+            GetComponent<PlayAudio>().playFootStepsAudio();
         }
         if (Input.GetKey(KeyCode.D))
         {
             transform.position += transform.right * speedMove * Time.fixedDeltaTime;
+
+            GetComponent<PlayAudio>().playFootStepsAudio();
         }
 
         rb.MovePosition(pos);

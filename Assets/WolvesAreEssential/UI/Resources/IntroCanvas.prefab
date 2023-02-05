@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a82b53a053dd3a4f9e77623f90fad02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ambientSFXs: {fileID: 8300000, guid: e7748ef1e0c77a142adb6a405498b983, type: 3}
 --- !u!1 &3645522033613821766
 GameObject:
   m_ObjectHideFlags: 0

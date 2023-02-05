@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 3732115901896189970}
   - component: {fileID: 118492421141763923}
   - component: {fileID: 4938178420956906726}
-  - component: {fileID: 2081101322456007648}
+  - component: {fileID: 3756722775292454635}
   m_Layer: 5
   m_Name: LoseCanvas
   m_TagString: Untagged
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2081101322456007648
+--- !u!114 &3756722775292454635
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,9 +150,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4196383111929178071}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a545ecd169c4b2445902365c2141fd65, type: 3}
+  m_Script: {fileID: 11500000, guid: f7b67b5fb8bb4a14183433ee76e0e521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loseAmbientAudio: {fileID: 8300000, guid: e7748ef1e0c77a142adb6a405498b983, type: 3}
 --- !u!1 &5031359814413111691
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +220,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Win!
+  m_text: You Lose!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

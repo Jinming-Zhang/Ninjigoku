@@ -8,6 +8,15 @@ public class PlayAudio : MonoBehaviour
     AudioClip ambientSFXs;
 
     [SerializeField]
+    List<AudioClip> stepsAudio;
+    [SerializeField]
+    float footStepCooldown;
+    [SerializeField]
+    float footStepVolume;
+
+    float footStepTimer;
+
+    [SerializeField]
     List<AudioClip> randomEnemySFXs;
     [SerializeField]
     float enemySFXCD;
@@ -25,5 +34,15 @@ public class PlayAudio : MonoBehaviour
         {
             AudioSystem.Instance.PlaySFX(randomEnemySFXs[Random.Range(0, randomEnemySFXs.Count)]);
         }
+    }
+
+    public void playFootStepsAudio()
+    {
+        if (footStepTimer >= footStepCooldown)
+        {
+            AudioSystem.Instance.PlaySFX(stepsAudio[Random.Range(0, stepsAudio.Count)], 0.2f);
+            footStepTimer = 0;
+        }
+        footStepTimer += Time.fixedDeltaTime;
     }
 }

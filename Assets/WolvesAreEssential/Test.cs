@@ -46,4 +46,15 @@ public class Test : MonoBehaviour
     {
         IntroCanvas.Instance.Shutdown();
     }
+    [ContextMenu("Show Lose Canvas")]
+    public void ShowLoseCanvas()
+    {
+        LoseCanvas.Instance.Show();
+    }
+    [ContextMenu("Hide Intro Canvas")]
+    public void HideLoseCanvas()
+    {
+        LoseCanvas.Instance.Shutdown();
+    }
+
 }
