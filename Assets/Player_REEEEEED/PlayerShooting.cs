@@ -19,13 +19,16 @@ public class PlayerShooting : MonoBehaviour
     }
     private void Update()
     {
-        LeftClick();
+        if (!GetComponent<PlayerCollision>().isDead)
+        {
+            LeftClick();
 
-        RightClick();
+            RightClick();
 
-        MidClick();
+            MidClick();
 
-        updateTimer();
+            updateTimer();
+        }
     }
 
     void updateTimer()

@@ -18,12 +18,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Player Move
-        Move();
+        if (!GetComponent<PlayerCollision>().isDead)
+        {
+            // Player Move
+            Move();
 
-        // Player Rotate
-        Rotate();
-        //Rotate2();
+            // Player Rotate
+            Rotate();
+        }
+
     }
 
     void Move()

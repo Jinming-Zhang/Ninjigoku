@@ -24,14 +24,21 @@ public class MobA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Timer<=1){
-        //    Timer+=Time.deltaTime;
-        //    if (Timer>=1){
-        //        _Rigidbody.isKinematic = False;
-        //    }
-        //}
-
-        transform.LookAt(player.transform.position);
+        if(!player){
+            player = GameObject.Find("Player");
+        }
+        if(!player)
+        {
+            return;
+        }
+        // commented code doesn't work ?
+        //print(player.transform.position);
+        //Vector3 dir = player.transform.position - transform.position;
+        Vector3 tar = player.transform.position;
+        tar.y = transform.position.y;
+        transform.LookAt(tar);
+        //transform.rotation
+        //transform.forward = (player.transform.position - transform.position).normalized;
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, chasingSpeed * Time.deltaTime);
     }
 
@@ -45,6 +52,6 @@ public class MobA : MonoBehaviour
 
     void OnDestroy()
     {
-        Instantiate(MobDestroy, transform.position, Quaternion.identity);
+        //Instantiate(MobDestroy, transform.position, Quaternion.identity);
     }
 }
