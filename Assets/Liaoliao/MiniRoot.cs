@@ -10,6 +10,7 @@ public class MiniRoot : MonoBehaviour
     public GameObject mobB;
     public float lootProbability  = 10f;
     public EnemyType _TYPE = EnemyType.MiniRoot;
+    public int miniRootHP = 5;
 
     private Vector3 destination = Vector3.zero;
     private float timerForSpawn;
@@ -27,10 +28,21 @@ public class MiniRoot : MonoBehaviour
             Vector3.right + Vector3.up
         };
     private int spawnLocationsIndex = 0;
+    private int hit;
     // Start is called before the first frame update
     void Start()
     {
-        timerForSpawn = 0;
+        timerForSpawn = spawnTime;
+        hit = 0;
+
+        // spawn 5 mobs at the beginning
+        for (int i = 0; i < 5; i++) {
+            if (lootCheck()) {
+                spawnB();
+            } else {
+                spawnA();
+            }
+        }
     }
 
     // Update is called once per frame
@@ -82,4 +94,15 @@ public class MiniRoot : MonoBehaviour
     private bool lootCheck() {
         return Random.Range(0, 100) < this.lootProbability;
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Debug.Log("hit!");
+            hit++;
+            if (hit >= miniRootHP) Destroy(gameObject);
+        }
+    }
+
 }
