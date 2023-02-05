@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class LoseCanvas : UIScreen<LoseCanvas>
 {
@@ -26,5 +27,17 @@ public class LoseCanvas : UIScreen<LoseCanvas>
             }
             return instance;
         }
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void Continue()
+    {
+        SceneManager.LoadScene(2);
+    }
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

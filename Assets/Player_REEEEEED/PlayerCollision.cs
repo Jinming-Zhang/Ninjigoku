@@ -26,6 +26,7 @@ public class PlayerCollision : MonoBehaviour
             AudioSystem.Instance.PlaySFX(playerDeathSound);
             // change bool
             isDead = true;
+            LoseCanvas.Instance.Show();
             // GetComponent<CapsuleCollider>().enabled = false;
             // TODO: Enter Death Scene.
         }
