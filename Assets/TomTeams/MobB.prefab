@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mobHealth: 1
-  chasingSpeed: 0.5
+  chasingSpeed: 9.5
   player: {fileID: 0}
   MobDestroy: {fileID: 4453355854733731408, guid: 8d28acec2e6fa5546980105baba360e4,
     type: 3}

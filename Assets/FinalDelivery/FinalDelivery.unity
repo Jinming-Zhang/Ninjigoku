@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1720957501, guid: 7af3f6c9b4592be4b90ed08ac107ae43, type: 3}
+      propertyPath: leftClickCooldown
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1069580701831859427, guid: 7af3f6c9b4592be4b90ed08ac107ae43,
         type: 3}
       propertyPath: m_Icon
@@ -462,7 +466,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822326285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 69.30797, y: 0, z: -10.9}
+  m_LocalPosition: {x: -81, y: 0, z: -62.3}
   m_LocalScale: {x: 1.49, y: 1.49, z: 1.49}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -488,7 +492,7 @@ MonoBehaviour:
   enemyResourceData: {fileID: 11400000, guid: 5e101e473f90a97408daf07a46cc784b, type: 2}
   enemyTemplate: {fileID: 1297285883530026136, guid: 4e30dc1a223bf479ca2a470f5ec97a48,
     type: 3}
-  radius: 242
+  radius: 243
 --- !u!1 &872619767
 GameObject:
   m_ObjectHideFlags: 0
