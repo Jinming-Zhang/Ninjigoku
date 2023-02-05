@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,9 +13,14 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Rigidbody rb;
 
+
+   
+    public bool isRunning;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+       
     }
 
     private void FixedUpdate()
@@ -27,14 +33,14 @@ public class PlayerMovement : MonoBehaviour
             // Player Rotate
             Rotate();
         }
-
+        CheckControl();
     }
 
     void Move()
     {
         // Debug.LogFormat("x: {0}, z: {1}", rb.position.x, rb.position.z);
         Vector3 pos = transform.position;
-
+       
         if (Input.GetKey(KeyCode.W))
         {
             Debug.LogFormat("x: {0}, z: {1}", rb.position.x, rb.position.z);
@@ -82,11 +88,15 @@ public class PlayerMovement : MonoBehaviour
         Vector3 current = transform.forward;
         Vector3 next = Vector3.RotateTowards(current, targetDir, degPerSec * Mathf.Deg2Rad * Time.fixedDeltaTime, 0);
         transform.forward = next;
-
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawSphere(transform.position, 4f);
+
+    void CheckControl() {
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            isRunning = true;
+        }
+        else { 
+            isRunning= false;
+        }
     }
 }

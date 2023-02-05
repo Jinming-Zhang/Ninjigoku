@@ -7,26 +7,43 @@ using UnityEngine.Playables;
 public class IntroSequenceTimelineControl : MonoBehaviour
 {
     PlayableDirector director;
+    PlayerCollision player;
+    Dialogue dialogue;
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         director = GetComponent<PlayableDirector>();
+        dialogue= FindObjectOfType<Dialogue>();
         director.played += DisablePlayerControl;
         director.stopped += EnablePlayerControl;
     }
+    void Start()
+    {
+        StartCoroutine(StartCutScence());
+        player = FindObjectOfType<PlayerCollision>();
+    }
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape)) {
+            director.Stop();
+        }
+    }
     void DisablePlayerControl(PlayableDirector p)
     {
-        var player = FindObjectOfType<PlayerCollision>();
+        Debug.LogWarning("start playing");
+        //var player = FindObjectOfType<PlayerCollision>();
         player.isDead = true;
+        dialogue.canClick = false;
     }
     void EnablePlayerControl(PlayableDirector p) {
-        var player = FindObjectOfType<PlayerCollision>();
+       
+        //var player = FindObjectOfType<PlayerCollision>();
         player.isDead = false;
+        dialogue.canClick = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    IEnumerator StartCutScence() {
+        yield return new WaitForSeconds(1);
+        director.Play();
     }
 }
