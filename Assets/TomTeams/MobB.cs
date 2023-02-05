@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class MobB : MonoBehaviour
 {
+    [SerializeField]
+    Star s;
+
     public int mobHealth = 1;
     public float chasingSpeed = 0.5f;
     public GameObject player;
     public GameObject MobDestroy;
     public GameObject DropPowerUp;
+    bool dead;
 
     // Start is called before the first frame update
     void Start()
     {
+        dead = false;
         player = GameObject.Find("Player");
         //playerRigidbody = GetComponent<Rigidbody>();
     }
@@ -35,8 +40,13 @@ public class MobB : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Bullet" || collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Bullet" && !dead)
         {
+            // Create a start on this location
+            Star star = Instantiate(s);
+            star.SetTransform(transform);
+            dead = true;
+            Debug.Log("Die");
             Destroy(gameObject);
         }
     }
@@ -46,5 +56,7 @@ public class MobB : MonoBehaviour
         // Instantiate(MobDestroy, transform.position, Quaternion.identity);
         //Spawn powerups
         //Instantiate(DropPowerUp, transform.position, Quaternion.identity);
+        
+
     }
 }

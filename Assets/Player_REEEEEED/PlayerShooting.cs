@@ -77,6 +77,7 @@ public class PlayerShooting : MonoBehaviour
     public void IncrementAtk()
     {
         playerAtk += 5;
+        Debug.LogFormat("Player ATK Now: {0}", playerAtk);
     }
 
     void RightClick()
