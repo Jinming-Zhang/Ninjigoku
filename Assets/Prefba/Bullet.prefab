@@ -51,6 +51,7 @@ MonoBehaviour:
   speed: 10
   movement: {x: 0, y: 0, z: 0}
   forward: {x: 0, y: 0, z: 0}
+  bulletLifeSpan: 5
 --- !u!135 &435979633000544718
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -250,7 +251,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2248598804070570077, guid: 7697bd10cd39f984e8ee951091283925, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7697bd10cd39f984e8ee951091283925, type: 3}
 --- !u!4 &5088329816493550828 stripped
 Transform:

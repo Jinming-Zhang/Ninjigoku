@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
+            Debug.LogFormat("x: {0}, z: {1}", rb.position.x, rb.position.z);
             //transform.position += transform.forward * speedMove * Time.fixedDeltaTime;
             pos.x = pos.x + speedMove * Time.fixedDeltaTime;
 
@@ -81,5 +83,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 next = Vector3.RotateTowards(current, targetDir, degPerSec * Mathf.Deg2Rad * Time.fixedDeltaTime, 0);
         transform.forward = next;
 
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawSphere(transform.position, 4f);
     }
 }

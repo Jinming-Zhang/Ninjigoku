@@ -25,6 +25,7 @@ public class EnemySpawner : MonoBehaviour
     private float timer = 0;
     int spawningIndex;
     bool started = false;
+    
     [ContextMenu("Start Timer")]
     public void StartTimer()
     {
