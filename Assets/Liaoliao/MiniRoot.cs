@@ -10,7 +10,7 @@ public class MiniRoot : MonoBehaviour
     public GameObject mobB;
     public float lootProbability  = 10f;
     public EnemyType _TYPE = EnemyType.MiniRoot;
-    public int miniRootHP = 5;
+    public int miniRootHP = 10;
 
     [SerializeField]
     private Vector3 destination = Vector3.zero;
