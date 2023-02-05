@@ -20,6 +20,13 @@ public class MobB : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!player){
+            player = GameObject.Find("Player");
+        }
+        if(!player)
+        {
+            return;
+        }
         //print(player.transform.position);
         //Vector3 dir = player.transform.position - transform.position;
         transform.LookAt(player.transform.position);
@@ -36,7 +43,7 @@ public class MobB : MonoBehaviour
 
     void OnDestroy() 
     {
-        Instantiate(MobDestroy, transform.position, Quaternion.identity);
+        // Instantiate(MobDestroy, transform.position, Quaternion.identity);
         //Spawn powerups
         //Instantiate(DropPowerUp, transform.position, Quaternion.identity);
     }
