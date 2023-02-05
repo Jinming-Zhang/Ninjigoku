@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4453355854733731421}
   - component: {fileID: 4453355854733731410}
   - component: {fileID: 4453355854733731411}
-  - component: {fileID: 4415019434619267788}
   m_Layer: 0
   m_Name: MobDestroy
   m_TagString: Untagged
@@ -662,7 +661,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 10
+    type: 0
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -978,8 +977,8 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 3
-        scalar: 20
-        minScalar: 15
+        scalar: 40
+        minScalar: 30
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -4871,15 +4870,3 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &4415019434619267788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4453355854733731408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32459e54d7503784a95928a3a8a5071d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -7,30 +7,38 @@ public class MobA : MonoBehaviour
     public int mobHealth = 1;
     public float chasingSpeed = 0.5f;
     public GameObject player;
-    private Rigidbody playerRigidbody;
+    //private Rigidbody _Rigidbody;
     public GameObject MobDestroy;
+    //public double Timer;
+
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
-        //playerRigidbody = GetComponent<Rigidbody>();
+        //_Rigidbody = GetComponent<Rigidbody>();
+        //_Rigidbody.isKinematic = True;
+        //Timer = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //print(player.transform.position);
-        //Vector3 dir = player.transform.position - transform.position;
+        //if (Timer<=1){
+        //    Timer+=Time.deltaTime;
+        //    if (Timer>=1){
+        //        _Rigidbody.isKinematic = False;
+        //    }
+        //}
+
         transform.LookAt(player.transform.position);
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, chasingSpeed * Time.deltaTime);
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "bullet")
+        if (collision.gameObject.tag == "Bullet" || collision.gameObject.tag == "Player")
         {
-            print(collision.gameObject.name);
             Destroy(gameObject);
         }
     }
