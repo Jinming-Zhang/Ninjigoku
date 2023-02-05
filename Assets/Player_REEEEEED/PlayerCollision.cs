@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    public bool isDead { get; set; }
+    public bool isDead;
 
     public void Start()
     {

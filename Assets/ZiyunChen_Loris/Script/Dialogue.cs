@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Playables;
+using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering;
+
 public class Dialogue : MonoBehaviour
 {
-
+    [SerializeField]
+    List<AudioClip> clickAudio;
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed;
     public int index;
+    public int indexForPan;
     public bool canClick;
+
     PlayableDirector director;
+    PlayerCollision player;
     void StartDialogue()
     {
         index = 0;
@@ -24,10 +31,17 @@ public class Dialogue : MonoBehaviour
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
-        if (index == lines.Length - 1) {
-            gameObject.SetActive(false);
+      if (index == indexForPan) {
+            //postProcess.SetActive(false);
+            Notify();
         }
     }
+
+    void Notify() {
+    
+        director.Play();
+    }
+
     void NextLine()
     {
         if (index < lines.Length - 1)
@@ -38,6 +52,10 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
+            player.isDead = false;
+            canClick = true;
+  
+           
             gameObject.SetActive(false);
         }
     }
@@ -46,6 +64,8 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
+        director = FindObjectOfType<PlayableDirector>();
+        player = FindObjectOfType<PlayerCollision>();
         StartDialogue();
     }
 
@@ -57,15 +77,18 @@ public class Dialogue : MonoBehaviour
             if (textComponent.text == lines[index])
             {
                 NextLine();
+                AudioSystem.Instance.PlaySFX(clickAudio[Random.Range(0, clickAudio.Count)], 0.2f);
             }
             else
             {
                 StopAllCoroutines();
                 textComponent.text = lines[index];
+                if(index == indexForPan) Notify();
             }
         }
         if (Input.GetKeyUp(KeyCode.Escape))
         {
+
             Destroy(this.gameObject);
         }
     }
