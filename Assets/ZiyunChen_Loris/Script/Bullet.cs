@@ -49,7 +49,7 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {//call collision game object damage enemy
-        if (collision.gameObject.tag == "Player") {
+        if (collision.gameObject.tag == "Enemy") {
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
