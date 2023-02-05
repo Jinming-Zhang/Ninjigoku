@@ -17,7 +17,7 @@ public class PlayerShooting : MonoBehaviour
     List<AudioClip> shootingSFXs;
 
     float leftTimer;
-    private int starsToIncreaseASPD = 20;
+    private int starsToIncreaseASPD = 25;
 
     void Start()
     {
