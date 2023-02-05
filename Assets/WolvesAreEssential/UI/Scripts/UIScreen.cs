@@ -23,9 +23,9 @@ public abstract class UIScreen<T> : MonoBehaviour where T : MonoBehaviour
         canvas.sortingOrder = SORTING_ORDER;
     }
 
-    public virtual void Startup()
+    public virtual void Show()
     {
-
+        gameObject.SetActive(true);
     }
 
     public virtual void Shutdown()
