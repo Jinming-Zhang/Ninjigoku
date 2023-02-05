@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e631bb10c4966b84981eb04e16d60b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftClickCooldown: 0
+  leftClickCooldown: 0.1
   b: {fileID: 435979633000544716, guid: 14fbeb4f357d484438f2bf16035c0154, type: 3}
   weaponPosition: {fileID: 528989749445215851}
   shootingSFXs:
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMove: 13
-  degPerSec: 720
+  degPerSec: 360
   rb: {fileID: 1069580701831859428}
 --- !u!114 &1720957507
 MonoBehaviour:
