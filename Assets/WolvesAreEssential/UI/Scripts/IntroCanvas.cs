@@ -5,6 +5,15 @@ using UnityEngine;
 
 public class IntroCanvas : UIScreen<IntroCanvas>
 {
+
+    [SerializeField]
+    AudioClip ambientSFXs;
+
+    public void Start()
+    {
+        AudioSystem.Instance.TransitionToBGM(ambientSFXs, 1);
+    }
+
     private static IntroCanvas instance;
     public static IntroCanvas Instance
     {
