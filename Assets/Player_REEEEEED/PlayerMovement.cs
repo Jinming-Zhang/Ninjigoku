@@ -25,16 +25,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        
         if (!GetComponent<PlayerCollision>().isDead)
         {
             // Player Move
             Move();
-
+            Debug.LogFormat("x: {0}, z: {1}", rb.position.x, rb.position.z);
             // Player Rotate
-            Rotate();
+            //Rotate();
         }
         CheckControl();
-    }
+        Vector3 v = rb.velocity;
+        v.y = -1;
+        rb.velocity = v;    }
 
     void Move()
     {
@@ -72,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         rb.MovePosition(pos);
+        //transform.position = pos;
     }
 
     void Rotate()
