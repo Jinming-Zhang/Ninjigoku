@@ -13,18 +13,208 @@ MonoBehaviour:
   m_Name: Enemy Resource Data
   m_EditorClassIdentifier: 
   enemySpawnData:
-  - timeElapsed: 0
-    enemyType: type 1
-    amount: 10
-    randomized: 0
-    coordinate: {x: 5, y: 0, z: 6}
   - timeElapsed: 5
-    enemyType: type 2
-    amount: 5
+    enemyType: 0
+    amount: 1
+    randomized: 0
+    coordinate: {x: 2.5, y: 0, z: 2.5}
+  - timeElapsed: 5
+    enemyType: 0
+    amount: 1
+    randomized: 0
+    coordinate: {x: -2.5, y: 0, z: 2.5}
+  - timeElapsed: 5
+    enemyType: 0
+    amount: 1
+    randomized: 0
+    coordinate: {x: -2.5, y: 0, z: -2.5}
+  - timeElapsed: 5
+    enemyType: 0
+    amount: 1
+    randomized: 0
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 15
+    enemyType: 0
+    amount: 1
+    randomized: 0
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 15
+    enemyType: 0
+    amount: 1
+    randomized: 0
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 15
+    enemyType: 0
+    amount: 1
+    randomized: 0
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 15
+    enemyType: 0
+    amount: 1
+    randomized: 0
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 15
+    enemyType: 0
+    amount: 1
+    randomized: 0
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 15
+    enemyType: 0
+    amount: 1
+    randomized: 0
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 15
+    enemyType: 0
+    amount: 1
+    randomized: 0
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 15
+    enemyType: 0
+    amount: 1
+    randomized: 0
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 25
+    enemyType: 0
+    amount: 4
     randomized: 1
-    coordinate: {x: 0, y: 0, z: 0}
-  - timeElapsed: 10
-    enemyType: type 3
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 35
+    enemyType: 0
+    amount: 8
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 45
+    enemyType: 0
+    amount: 1
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 55
+    enemyType: 0
+    amount: 12
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 65
+    enemyType: 0
+    amount: 4
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 75
+    enemyType: 0
+    amount: 8
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 85
+    enemyType: 0
+    amount: 1
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 95
+    enemyType: 0
     amount: 2
     randomized: 1
-    coordinate: {x: 0, y: 0, z: 0}
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 105
+    enemyType: 0
+    amount: 16
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 115
+    enemyType: 0
+    amount: 8
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 125
+    enemyType: 0
+    amount: 1
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 135
+    enemyType: 0
+    amount: 2
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 145
+    enemyType: 0
+    amount: 4
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 155
+    enemyType: 0
+    amount: 20
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 165
+    enemyType: 0
+    amount: 1
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 175
+    enemyType: 0
+    amount: 2
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 185
+    enemyType: 0
+    amount: 4
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 195
+    enemyType: 0
+    amount: 8
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 205
+    enemyType: 0
+    amount: 24
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 215
+    enemyType: 0
+    amount: 2
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 225
+    enemyType: 0
+    amount: 4
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 235
+    enemyType: 0
+    amount: 8
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 245
+    enemyType: 0
+    amount: 1
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 255
+    enemyType: 0
+    amount: 28
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 265
+    enemyType: 0
+    amount: 4
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 275
+    enemyType: 0
+    amount: 8
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 285
+    enemyType: 0
+    amount: 1
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 295
+    enemyType: 0
+    amount: 2
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
+  - timeElapsed: 300
+    enemyType: 0
+    amount: 30
+    randomized: 1
+    coordinate: {x: 2.5, y: 0, z: -2.5}
