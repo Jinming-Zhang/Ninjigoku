@@ -1214,7 +1214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e631bb10c4966b84981eb04e16d60b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftClickCooldown: 0.1
+  leftClickCooldown: 0.125
   b: {fileID: 435979633000544716, guid: 14fbeb4f357d484438f2bf16035c0154, type: 3}
   weaponPosition: {fileID: 0}
   shootingSFXs:
@@ -1236,6 +1236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
+  playerDeathSound: {fileID: 0}
 --- !u!54 &5862467865914161363
 Rigidbody:
   m_ObjectHideFlags: 0
