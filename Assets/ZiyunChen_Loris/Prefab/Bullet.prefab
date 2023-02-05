@@ -48,6 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletMesh: {fileID: 435979633833788329}
   speed: 10
+  movement: {x: 0, y: 0, z: 0}
+  forward: {x: 0, y: 0, z: 0}
+  bulletLifeSpan: 3
 --- !u!135 &435979633000544718
 SphereCollider:
   m_ObjectHideFlags: 0

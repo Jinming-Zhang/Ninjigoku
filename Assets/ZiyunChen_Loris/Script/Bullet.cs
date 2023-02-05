@@ -13,16 +13,31 @@ public class Bullet : MonoBehaviour
     Vector3 movement;
     [SerializeField]
     Vector3 forward;
+
+    [SerializeField]
+    float bulletLifeSpan;
+    float bulletAge;
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
+    void updateBulletAge()
+    {
+        if (bulletAge >= bulletLifeSpan)
+        {
+            Destroy(this.gameObject);
+        }
+        bulletAge += Time.deltaTime;
+    }
+
     // Update is called once per frame
     void Update()
     {
         Movement();
+        updateBulletAge();
     }
 
     private void Movement() {

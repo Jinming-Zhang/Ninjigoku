@@ -11,6 +11,9 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField]
     Transform weaponPosition;
 
+    [SerializeField]
+    List<AudioClip> shootingSFXs;
+
     float leftTimer;
 
     void Start()
@@ -51,7 +54,8 @@ public class PlayerShooting : MonoBehaviour
             if (leftTimer == 0)
             {
                 Debug.Log("SHOOT");
-
+                
+                AudioSystem.Instance.PlaySFX(shootingSFXs[Random.Range(0, shootingSFXs.Count)]);
                 // Instantiate Bullet
                 Bullet bullet = Instantiate(b);
                 bullet.transform.forward = transform.forward;
