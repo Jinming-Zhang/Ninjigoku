@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.Playables;
 public class Dialogue : MonoBehaviour
 {
 
@@ -10,6 +10,8 @@ public class Dialogue : MonoBehaviour
     public string[] lines;
     public float textSpeed;
     public int index;
+    public bool canClick;
+    PlayableDirector director;
     void StartDialogue()
     {
         index = 0;
@@ -41,12 +43,15 @@ public class Dialogue : MonoBehaviour
     {
         textComponent.text = string.Empty;
         StartDialogue();
+        director = GetComponent<PlayableDirector>();
+        director.played += EnableClick;
+        director.stopped += DisableClick;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(canClick && Input.GetMouseButtonDown(0))
         {
             if (textComponent.text == lines[index])
             {
@@ -59,4 +64,14 @@ public class Dialogue : MonoBehaviour
             }
         }
     }
+
+    void EnableClick(PlayableDirector p) {
+        canClick = true;
+    }
+
+    void DisableClick(PlayableDirector p) { 
+        canClick = false; 
+    }
 }
+
+ 
