@@ -96,8 +96,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 0.7135493
+  m_Height: 2.8541965
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &1297285883530026143
@@ -118,6 +118,7 @@ MonoBehaviour:
   mobB: {fileID: 6509223927974369515, guid: 0ccb272e01a4344619c7f320ae66154a, type: 3}
   lootProbability: 10
   _TYPE: 0
+  miniRootHP: 5
 --- !u!54 &-5383048204015802005
 Rigidbody:
   m_ObjectHideFlags: 0
