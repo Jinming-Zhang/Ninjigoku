@@ -60,7 +60,11 @@ public class PlayerShooting : MonoBehaviour
                 AudioSystem.Instance.PlaySFX(shootingSFXs[Random.Range(0, shootingSFXs.Count)]);
                 // Instantiate Bullet
                 Bullet bullet = Instantiate(b);
-                bullet.transform.forward = transform.forward;
+                Vector3 src = transform.position;
+                Vector3 tar = weaponPosition.position;
+                src.y = tar.y;
+                Vector3 dir = tar - src;
+                bullet.transform.forward = dir;
                 bullet.transform.position = weaponPosition.position;
 
                 // Enter Cooldown Cycle
