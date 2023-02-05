@@ -17,6 +17,7 @@ public class PlayerShooting : MonoBehaviour
     List<AudioClip> shootingSFXs;
 
     float leftTimer;
+    private int starsToIncreaseASPD = 20;
 
     void Start()
     {
@@ -82,6 +83,15 @@ public class PlayerShooting : MonoBehaviour
     {
         playerAtk += 5;
         Debug.LogFormat("Player ATK Now: {0}", playerAtk);
+        starsToIncreaseASPD--;
+        if (starsToIncreaseASPD <= 0) {
+            increaseASPD();
+            starsToIncreaseASPD = 20;
+        }
+    }
+
+    private void increaseASPD() {
+        if (leftClickCooldown > 0.025) leftClickCooldown -= 0.025f;
     }
 
     void RightClick()
