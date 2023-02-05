@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class GameStatus : MonoBehaviour
 {
-
+    private static GameStatus instance;
+    public static GameStatus Instance => instance;
     public bool freeze = false;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-
+        if (!instance)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void PlayerLose()
@@ -19,6 +26,6 @@ public class GameStatus : MonoBehaviour
     }
     public void PlayerWin()
     {
-
+        WinCanvas.Instance.Show();
     }
 }
