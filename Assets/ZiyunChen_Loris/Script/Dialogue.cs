@@ -24,6 +24,9 @@ public class Dialogue : MonoBehaviour
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
+        if (index == lines.Length - 1) {
+            gameObject.SetActive(false);
+        }
     }
     void NextLine()
     {
@@ -38,14 +41,12 @@ public class Dialogue : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+    
     // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
         StartDialogue();
-        director = GetComponent<PlayableDirector>();
-        director.played += EnableClick;
-        director.stopped += DisableClick;
     }
 
     // Update is called once per frame
@@ -63,15 +64,13 @@ public class Dialogue : MonoBehaviour
                 textComponent.text = lines[index];
             }
         }
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            Destroy(this.gameObject);
+        }
     }
 
-    void EnableClick(PlayableDirector p) {
-        canClick = true;
-    }
-
-    void DisableClick(PlayableDirector p) { 
-        canClick = false; 
-    }
+    
 }
 
  

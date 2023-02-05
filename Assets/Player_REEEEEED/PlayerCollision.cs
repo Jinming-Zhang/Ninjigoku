@@ -8,7 +8,7 @@ public class PlayerCollision : MonoBehaviour
 
     public void Start()
     {
-        isDead = false;
+        isDead = true;
     }
 
     private void OnCollisionEnter(Collision collision)
