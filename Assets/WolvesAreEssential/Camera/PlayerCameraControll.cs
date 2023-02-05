@@ -5,10 +5,11 @@ using Cinemachine;
 [RequireComponent(typeof(CinemachineVirtualCamera))]
 public class PlayerCameraControll : MonoBehaviour
 {
-    public static int shakeIntensity;
     [Header("Shaking Config")]
-    [SerializeField]
-    private int shakeFrequency;
+    public float shakeIntensity;
+    public float shakeFrequency;
+ 
+
     [Header("Movement Config")]
     [SerializeField]
     float xOffsetMax;
@@ -107,15 +108,15 @@ public class PlayerCameraControll : MonoBehaviour
 
     }
 
-    public void ShakeCamera(float duration, float intensity = 0.3f, float frequency = 200f)
+    public void ShakeCamera(float duration)
     {
         if (shakeCoroutine != null)
         {
             shakeTimer += duration;
         }
         CinemachineBasicMultiChannelPerlin perlin = vc.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        perlin.m_AmplitudeGain = intensity;
-        perlin.m_FrequencyGain = frequency;
+        perlin.m_AmplitudeGain = shakeIntensity;
+        perlin.m_FrequencyGain = shakeFrequency;
         shakeTimer = duration;
         shakeCoroutine = StartCoroutine(ShakeCR());
     }

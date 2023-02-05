@@ -5,7 +5,7 @@ using UnityEngine;
 public class MobA : MonoBehaviour
 {
     public int mobHealth = 1;
-    public float chasingSpeed = 0.5f;
+    public float chasingSpeed = 8f;
     public GameObject player;
     //private Rigidbody _Rigidbody;
     public GameObject MobDestroy;
