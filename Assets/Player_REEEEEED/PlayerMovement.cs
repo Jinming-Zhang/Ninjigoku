@@ -84,9 +84,4 @@ public class PlayerMovement : MonoBehaviour
         transform.forward = next;
 
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawSphere(transform.position, 4f);
-    }
 }
