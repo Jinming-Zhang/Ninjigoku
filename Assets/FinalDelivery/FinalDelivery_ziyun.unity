@@ -1709,7 +1709,7 @@ PrefabInstance:
     - target: {fileID: 206337315913391648, guid: 3b4d5c8737dea8245bc19d2f2325cf45,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70853883
+      value: 0.7085388
       objectReference: {fileID: 0}
     - target: {fileID: 206337315913391648, guid: 3b4d5c8737dea8245bc19d2f2325cf45,
         type: 3}
@@ -1719,12 +1719,12 @@ PrefabInstance:
     - target: {fileID: 206337315913391648, guid: 3b4d5c8737dea8245bc19d2f2325cf45,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.65602434
+      value: 0.6560244
       objectReference: {fileID: 0}
     - target: {fileID: 206337315913391648, guid: 3b4d5c8737dea8245bc19d2f2325cf45,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.17664807
+      value: 0.17664808
       objectReference: {fileID: 0}
     - target: {fileID: 206337315913391648, guid: 3b4d5c8737dea8245bc19d2f2325cf45,
         type: 3}
@@ -3061,7 +3061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66de4a69bd5217c45bb1532194ffd211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 27000
+  maxHealth: 41000
   deathSound: {fileID: 8300000, guid: b2046fa8048b27c48805a12ba3daaeeb, type: 3}
   health: 0
 --- !u!136 &1730734746
