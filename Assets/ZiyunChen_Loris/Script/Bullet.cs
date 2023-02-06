@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
 
     void updateBulletAge()
     {
-        if (bulletAge >= bulletLifeSpan)
+        if (bulletAge >= bulletLifeSpan / 4)
         {
             Destroy(this.gameObject);
         }
@@ -40,6 +40,8 @@ public class Bullet : MonoBehaviour
         Movement();
         updateBulletAge();
     }
+
+
 
     private void Movement()
     {
