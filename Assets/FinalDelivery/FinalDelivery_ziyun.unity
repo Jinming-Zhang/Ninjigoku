@@ -1277,29 +1277,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 466.84448, y: 113.901794, z: 24.50358}
   m_Center: {x: 0, y: 42.343666, z: 11.75179}
---- !u!1 &1183997754 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 206337316927160026, guid: 3b4d5c8737dea8245bc19d2f2325cf45,
-    type: 3}
-  m_PrefabInstance: {fileID: 1340016792}
-  m_PrefabAsset: {fileID: 0}
---- !u!320 &1183997756
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183997754}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 0}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings: []
-  m_ExposedReferences:
-    m_References: []
 --- !u!1 &1213097356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,7 +1307,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.3
+  m_Intensity: 0.35
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1732,7 +1709,7 @@ PrefabInstance:
     - target: {fileID: 206337315913391648, guid: 3b4d5c8737dea8245bc19d2f2325cf45,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7085388
+      value: 0.70853883
       objectReference: {fileID: 0}
     - target: {fileID: 206337315913391648, guid: 3b4d5c8737dea8245bc19d2f2325cf45,
         type: 3}
@@ -1742,12 +1719,12 @@ PrefabInstance:
     - target: {fileID: 206337315913391648, guid: 3b4d5c8737dea8245bc19d2f2325cf45,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6560244
+      value: 0.65602434
       objectReference: {fileID: 0}
     - target: {fileID: 206337315913391648, guid: 3b4d5c8737dea8245bc19d2f2325cf45,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.17664808
+      value: 0.17664807
       objectReference: {fileID: 0}
     - target: {fileID: 206337315913391648, guid: 3b4d5c8737dea8245bc19d2f2325cf45,
         type: 3}
@@ -3097,10 +3074,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 340.48993
-  m_Height: 974.8379
+  m_Radius: 361.8635
+  m_Height: 1714.8188
   m_Direction: 1
-  m_Center: {x: 141.55782, y: 300.18365, z: -91.64446}
+  m_Center: {x: 141.5577, y: -69.80855, z: -91.64448}
 --- !u!1 &1735975500
 GameObject:
   m_ObjectHideFlags: 0

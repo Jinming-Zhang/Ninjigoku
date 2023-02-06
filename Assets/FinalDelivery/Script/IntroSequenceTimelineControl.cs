@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.Playables;
 using UnityEngine.Playables;
 using Cinemachine;
 using System;
@@ -11,7 +10,8 @@ using Unity.VisualScripting;
 [RequireComponent(typeof(PlayableDirector))]
 public class IntroSequenceTimelineControl : MonoBehaviour
 {   
-    public static event Action onEnd; 
+    public static event Action onEnd;
+    
     PlayableDirector director;
     PlayerCollision player;
     Dialogue dialogue;
@@ -60,6 +60,7 @@ public class IntroSequenceTimelineControl : MonoBehaviour
         //var player = FindObjectOfType<PlayerCollision>();
         //player.isDead = false;
         dialogue.canClick = true;
+        Slider.SetActive(true);
     }
 
     IEnumerator ChangeCameraSettings() {
