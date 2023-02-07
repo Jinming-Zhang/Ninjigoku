@@ -60,7 +60,7 @@ MonoBehaviour:
     coordinate: {x: 2.5, y: 0, z: -2.5}
   - timeElapsed: 35
     enemyType: 0
-    amount: 4
+    amount: 2
     randomized: 1
     coordinate: {x: 2.5, y: 0, z: -2.5}
   - timeElapsed: 45
@@ -145,7 +145,7 @@ MonoBehaviour:
     coordinate: {x: 2.5, y: 0, z: -2.5}
   - timeElapsed: 215
     enemyType: 0
-    amount: 1
+    amount: 2
     randomized: 1
     coordinate: {x: 2.5, y: 0, z: -2.5}
   - timeElapsed: 225
@@ -155,22 +155,22 @@ MonoBehaviour:
     coordinate: {x: 2.5, y: 0, z: -2.5}
   - timeElapsed: 235
     enemyType: 0
-    amount: 2
+    amount: 1
     randomized: 1
     coordinate: {x: 2.5, y: 0, z: -2.5}
   - timeElapsed: 245
     enemyType: 0
-    amount: 4
+    amount: 2
     randomized: 1
     coordinate: {x: 2.5, y: 0, z: -2.5}
   - timeElapsed: 255
     enemyType: 0
-    amount: 2
+    amount: 1
     randomized: 1
     coordinate: {x: 2.5, y: 0, z: -2.5}
   - timeElapsed: 265
     enemyType: 0
-    amount: 4
+    amount: 1
     randomized: 1
     coordinate: {x: 2.5, y: 0, z: -2.5}
   - timeElapsed: 275
@@ -185,11 +185,11 @@ MonoBehaviour:
     coordinate: {x: 2.5, y: 0, z: -2.5}
   - timeElapsed: 295
     enemyType: 0
-    amount: 2
+    amount: 1
     randomized: 1
     coordinate: {x: 2.5, y: 0, z: -2.5}
   - timeElapsed: 300
     enemyType: 0
-    amount: 30
+    amount: 1
     randomized: 1
     coordinate: {x: 2.5, y: 0, z: -2.5}
