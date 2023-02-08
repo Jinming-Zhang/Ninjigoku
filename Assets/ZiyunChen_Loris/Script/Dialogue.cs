@@ -16,6 +16,7 @@ public class Dialogue : MonoBehaviour
     public int index;
     public int indexForPan;
     public bool canClick;
+    public GameObject it_holder;
     IntroSequenceTimelineControl it;
     EnemySpawner enemySpawner;
     PlayableDirector director;
@@ -67,11 +68,12 @@ public class Dialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        it = FindObjectOfType<IntroSequenceTimelineControl>();
+        it = it_holder.GetComponent<IntroSequenceTimelineControl>();
         enemySpawner = FindObjectOfType<EnemySpawner>();
         textComponent.text = string.Empty;
-        director = FindObjectOfType<PlayableDirector>();
+        director = it_holder.GetComponent<PlayableDirector>();
         player = FindObjectOfType<PlayerCollision>();
+        
         StartDialogue();
     }
 
@@ -91,15 +93,18 @@ public class Dialogue : MonoBehaviour
                 textComponent.text = lines[index];
                 if(index == indexForPan) Notify();
             }
+            
         }
-        if (Input.GetKeyUp(KeyCode.Escape) && !it.cutsceneisEnded)
+        
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
+            Debug.Log(it.cutsceneisEnded);
             player.isDead = false;
-            canClick = true;
+            canClick = false;
             if (!it.cutsceneisEnded) director.Stop();
             enemySpawner.StartTimer();
-            gameObject.SetActive(false);
-           
+            this.gameObject.SetActive(false);
+
         }
     }
 
